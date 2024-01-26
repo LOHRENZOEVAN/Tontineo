@@ -26,8 +26,8 @@ class TontineGroupCreator extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Image.asset('lib/assets/images/tontineo_logo.png', width: 50, height: 50), 
-            const Text('Hello Kossi, \n You have not create a Tontine yet!'),
+            Image.asset('lib/assets/images/tontineo_logo.png', width: 40, height: 40), 
+            const Text('Hello Kossi, \nYou have not create a Tontine yet!'),
             const Icon(Icons.group),
           ],
         ),

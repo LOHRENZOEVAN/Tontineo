@@ -120,7 +120,7 @@ class TontineContributions extends StatelessWidget {
                 children: [
                   Image.asset(
                     "lib/assets/images/group_image.png",
-                    height: 180.0,
+                    height: 150.0,
                     width: double.infinity,
                     fit: BoxFit.contain,
                   ),
@@ -132,7 +132,7 @@ class TontineContributions extends StatelessWidget {
               ),
             ),
 
-            const SizedBox(height: 80.0),
+            const SizedBox(height: 70.0),
             ElevatedButton(
               onPressed: () {
                 // Navigate to the RecordContribution screen
@@ -147,7 +147,7 @@ class TontineContributions extends StatelessWidget {
                 shape: RoundedRectangleBorder(
                   borderRadius: BorderRadius.circular(6.0),
                 ),
-                minimumSize: const Size.fromHeight(60.0),
+                minimumSize: const Size.fromHeight(50.0),
               ),
               child: const Text(
                 "Record Contributions",
