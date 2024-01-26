@@ -1,6 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tontineo_mobile_app/ui/home/home/invite_members_page.dart';
 
 class TontineGroupHomepage extends StatelessWidget {
+  const TontineGroupHomepage({Key? key});
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
@@ -8,10 +11,10 @@ class TontineGroupHomepage extends StatelessWidget {
         children: [
           // Picture at the top left
           Container(
-            margin: EdgeInsets.all(16.0),
+            margin: const EdgeInsets.all(16.0),
             child: ClipOval(
               child: Image.network(
-                'https://example.com/your-image-url.jpg',
+                'https://media.istockphoto.com/id/77931645/photo/woman-and-young-girl-outdoors-with-people-in-background.jpg?s=1024x1024&w=is&k=20&c=ebHwY0O_SbqVenmJJw9DSh-ANmdgxyI_pO3OwmwE6VU=',
                 width: 80.0,
                 height: 80.0,
                 fit: BoxFit.cover,
@@ -41,13 +44,26 @@ class TontineGroupHomepage extends StatelessWidget {
                 },
                 child: Text('Invite members'),
                 style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green),
+                  primary: Colors.green,
+                ),
               ),
-              ElevatedButton(
-                onPressed: () {
-                  // Handle button press
+              GestureDetector(
+                onTap: () {
+                  // Navigate to the next screen
+                  Navigator.push(
+                    context,
+                    MaterialPageRoute(builder: (context) => InviteMembersPage()),
+                  );
                 },
-                child: Text('Notify members'),
+                child: ElevatedButton(
+                  onPressed: () {
+                    Navigator.push(
+                      context,
+                      MaterialPageRoute(builder: (context) => InviteMembersPage()),
+                    );
+                  },
+                  child: Text('Next'),
+                ),
               ),
             ],
           ),

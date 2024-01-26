@@ -10,7 +10,7 @@ class _InviteMembersPageState extends State<InviteMembersPage> {
   List<Contact> _data = [
     Contact(name: 'Were Samson', phoneNumber: '123-456-7890',circleColor: Colors.blue),
     Contact(name: 'Kossi ADANOU', phoneNumber: '987-654-3210',circleColor: Colors.black12),
-    Contact(name: 'Nkui Loh', phoneNumber: '555-123-4547',circleColor: Colors.red),
+    Contact(name: 'Nkwi Loh', phoneNumber: '555-123-4547',circleColor: Colors.red),
     Contact(name: 'Mishek', phoneNumber: '555-123-4561',circleColor: Colors.green),
     Contact(name: 'Maku', phoneNumber: '555-123-4560',circleColor: Colors.redAccent),
     Contact(name: 'Senior Francois', phoneNumber: '555-123-4560',circleColor: Colors.redAccent),

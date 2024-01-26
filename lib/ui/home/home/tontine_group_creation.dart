@@ -1,8 +1,9 @@
 import 'package:flutter/material.dart';
+import 'package:tontineo_mobile_app/ui/home/home/tontine_group_home_page.dart';
 
 
 class TontineGroupCreation extends StatelessWidget {
-  const TontineGroupCreation({super.key});
+  const TontineGroupCreation({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -17,7 +18,7 @@ class TontineGroupCreation extends StatelessWidget {
 }
 
 class TontineGroupCreator extends StatelessWidget {
-  const TontineGroupCreator({super.key});
+  const TontineGroupCreator({Key? key});
 
   @override
   Widget build(BuildContext context) {
@@ -26,8 +27,8 @@ class TontineGroupCreator extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Image.asset('lib/assets/images/tontineo_logo.png', width: 40, height: 40), 
-            const Text('Hello Kossi, \nYou have not create a Tontine yet!'),
+            Image.asset('lib/assets/images/tontineo_logo.png', width: 40, height: 40),
+            const Text('Hello Kossi, \nYou have not created a Tontine yet!'),
             const Icon(Icons.group),
           ],
         ),
@@ -61,20 +62,40 @@ class TontineGroupCreator extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             // Create Tontine Group button
-            ElevatedButton(
-              onPressed: () {
-                // Add your onPressed code here
+            GestureDetector(
+              onTap: () {
+                // Navigate to the next screen
+                Navigator.push(
+                  context,
+                  MaterialPageRoute(builder: (context) => TontineGroupHomepage()),
+                );
               },
-              style: ElevatedButton.styleFrom(
-                      backgroundColor: Colors.green, // Set the background color to green
-                    ),
-              child: const Text('Create Tontine Group',
-              style: TextStyle(color: Colors.white),
-              ),
+              child: ElevatedButton(
+  onPressed: () {
+    Navigator.push(
+      context,
+      MaterialPageRoute(builder: (context) => Signup()),
+    );
+  },
+  child: const Text('Create Tontine Group'),
+),
+
             ),
           ],
         ),
       ),
+    );
+  }
+}
+
+class Signup extends StatelessWidget {
+  const Signup({super.key});
+
+  @override
+  Widget build(BuildContext context) {
+    return const MaterialApp(
+      debugShowCheckedModeBanner: false,
+      home: TontineGroupHomepage(),
     );
   }
 }

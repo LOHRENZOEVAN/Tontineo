@@ -8,6 +8,7 @@ import 'package:tontineo_mobile_app/ui/auth/register/sign_up.dart';
 
 import 'package:tontineo_mobile_app/ui/home/home/contributions/tontine_contribution_page.dart';
 import 'package:tontineo_mobile_app/ui/home/home/tontine_group_creation.dart';
+import 'package:tontineo_mobile_app/ui/home/home/tontine_group_home_page.dart';
 
 import 'package:tontineo_mobile_app/ui/home/tontine_home_page.dart';
 import 'package:tontineo_mobile_app/ui/home/settings/tontine_settings_page.dart';
@@ -47,6 +48,7 @@ class _TontineoAppState extends State<TontineoApp> {
         '/home': (context) => TontineHomePage(user: user),
         '/settings': (context) => const SettingsPage(),
         '/create-tontine': (context) => TontineGroupCreation(),
+         '/TontineGroupCreation': (context) => TontineGroupHomepage(),
         '/invite_members': (context) => InviteMembersPage(),
         '/contributions': (context) => TontineContributions(),
       },
