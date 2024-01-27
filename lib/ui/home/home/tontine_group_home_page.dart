@@ -62,7 +62,7 @@ class TontineGroupHomepage extends StatelessWidget {
                       MaterialPageRoute(builder: (context) => InviteMembersPage()),
                     );
                   },
-                  child: Text('Next'),
+                  child: Text('Invite members from contacts'),
                 ),
               ),
             ],
