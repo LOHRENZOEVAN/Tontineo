@@ -1,24 +1,23 @@
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:tontineo_mobile_app/ui/home/home/tontine_group_home_page.dart';
+import 'package:tontineo_mobile_app/ui/home/home/contributions/personal/group_name_display_screen.dart';
 
-
-class TontineGroupCreation extends StatelessWidget {
-  const TontineGroupCreation({Key? key});
+class TontineGroupCreation extends StatefulWidget {
+  const TontineGroupCreation({Key? key}) : super(key: key);
 
   @override
-  Widget build(BuildContext context) {
-    return MaterialApp(
-      title: 'Tontine Group Manager',
-      theme: ThemeData(
-        primarySwatch: Colors.blue,
-      ),
-      home: TontineGroupCreator(),
-    );
-  }
+  State<TontineGroupCreation> createState() => _TontineGroupCreationState();
 }
 
-class TontineGroupCreator extends StatelessWidget {
-  const TontineGroupCreator({Key? key});
+class TontineGroupCreator extends StatefulWidget {
+  const TontineGroupCreator({Key? key}) : super(key: key);
+
+  @override
+  _TontineGroupCreatorState createState() => _TontineGroupCreatorState();
+}
+
+class _TontineGroupCreatorState extends State<TontineGroupCreator> {
+  String groupName = '';
 
   @override
   Widget build(BuildContext context) {
@@ -27,8 +26,9 @@ class TontineGroupCreator extends StatelessWidget {
         title: Row(
           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
           children: <Widget>[
-            Image.asset('lib/assets/images/tontineo_logo.png', width: 40, height: 40),
-            const Text('Hello Kossi, \nYou have not created a Tontine yet!'),
+            Image.asset('lib/assets/images/tontineo_logo.png',
+                width: 50, height: 50),
+            const Text('Hello Kossi, \n You have not create a Tontine yet!'),
             const Icon(Icons.group),
           ],
         ),
@@ -43,7 +43,7 @@ class TontineGroupCreator extends StatelessWidget {
               onChanged: (value) {
                 // Update the groupName variable when the text changes
                 setState(() {
-                  var groupName = value;
+                  groupName = value;
                 });
               },
               decoration: const InputDecoration(
@@ -68,24 +68,23 @@ class TontineGroupCreator extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             // Create Tontine Group button
-            GestureDetector(
-              onTap: () {
-                // Navigate to the next screen
+            ElevatedButton(
+              onPressed: () {
                 Navigator.push(
                   context,
-                  MaterialPageRoute(builder: (context) => TontineGroupHomepage()),
+                  MaterialPageRoute(
+                    builder: (context) => GroupNameDisplayScreen(groupName: groupName),
+                  ),
                 );
               },
-              child: ElevatedButton(
-  onPressed: () {
-    Navigator.push(
-      context,
-      MaterialPageRoute(builder: (context) => Signup()),
-    );
-  },
-  child: const Text('Create Tontine Group'),
-),
-
+              style: ElevatedButton.styleFrom(
+                backgroundColor:
+                    Colors.green, // Set the background color to green
+              ),
+              child: const Text(
+                'Create Tontine Group',
+                style: TextStyle(color: Colors.white),
+              ),
             ),
           ],
         ),
