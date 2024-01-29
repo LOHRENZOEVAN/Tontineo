@@ -9,6 +9,7 @@ import 'package:tontineo_mobile_app/ui/home/home/tontine_group_creation.dart';
 
 import 'package:tontineo_mobile_app/ui/home/tontine_home_page.dart';
 import 'package:tontineo_mobile_app/ui/home/settings/tontine_settings_page.dart';
+import 'package:tontineo_mobile_app/ui/splash/splash_screen.dart';
 
 class TontineoApp extends StatefulWidget {
   const TontineoApp({Key? key}) : super(key: key);
@@ -43,13 +44,17 @@ class _TontineoAppState extends State<TontineoApp> {
       routes: <String, WidgetBuilder>{
         '/signup': (context) => const SignupScreen(),
         '/login': (context) => const LoginScreen(),
-        '/dashboard': (context) => const DashboardPage(),        
+        '/dashboard': (context) => const SplashScreen (),        
         '/home': (context) => TontineHomePage(user: user),
         '/settings': (context) => const SettingsPage(),
         '/create-tontine': (context) => TontineGroupCreation(),
         '/invite_members': (context) => InviteMembersPage(),
-        '/contributions': (context) => TontineContributions(),
+        '/contributions': (context) => RecordContributions(),
       },
     );
   }
+}
+
+class DashboardPage {
+  const DashboardPage();
 }
